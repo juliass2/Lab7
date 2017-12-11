@@ -25,6 +25,15 @@ public class Pokemon {
     int hitPoints;
 
     /**
+     * Gets the pokemon's hit points.
+     *
+     * @return the pokemon's hit points
+     */
+    public int getHP() {
+        return hitPoints;
+    }
+
+    /**
      * This Pokemon's attack level.
      * <p>
      * Users have up to 50 points to split between attack level and defense level.
@@ -42,6 +51,15 @@ public class Pokemon {
      * This Pokemon's name.
      */
     String name;
+
+    /**
+     * Gets Pokemon's name.
+     *
+     * @return the pokemon's name
+     */
+    public String getName() {
+        return name;
+    }
 
     /**
      * A 6 sided dice used to calculate attack damage.
@@ -68,6 +86,30 @@ public class Pokemon {
         this.attackLevel = 0;
         this.defenseLevel = 0;
         this.name = "";
+    }
+
+    /**
+     * Create a new Pokemon with input values.
+     * <p>
+     * Constructs a new Pokemon with a 6-sided die, 20-sided die,
+     * input hit points, attack level of input,
+     * defense level of input, and an inputted name.
+     *
+     * @param name0 user name for pokemon
+     * @param hitPoints0 inputted hit points
+     * @param attack0 inputted attack points
+     * @param defense0 inputted defense points
+     */
+    public Pokemon(final String name0, final int hitPoints0,
+                final int attack0, final int defense0) {
+        final int d6num = 6;
+        final int d20num = 20;
+        this.d6 = new Dice(d6num);
+        this.d20 = new Dice(d20num);
+        this.hitPoints = hitPoints0;
+        this.attackLevel = attack0;
+        this.defenseLevel = defense0;
+        this.name = name0;
     }
 
     /**
